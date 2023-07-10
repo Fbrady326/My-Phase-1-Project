@@ -18,7 +18,7 @@ search.addEventListener("submit", function(event) {
   results.innerHTML = " ";
   errorMessage.textContent = " ";
 
-  fetch(`https://eldenring.fanapis.com/api/bosses${updatedName}`)
+  fetch(`https://eldenring.fanapis.com/api/bosses/${updatedName}`)
   .then(function(response) {
     if (!response.ok) {
         throw new Error("Error Occured. The boss you entered was not found on https://eldenring.fanapis.com/api/bosses")
@@ -60,4 +60,13 @@ search.addEventListener("submit", function(event) {
     errorMessage.textContent = error.message 
     loading.style.display = "none"
    })
+})
+
+
+clearButton.addEventListener("click", function() {
+    search.reset()
+    results.innerHTML = " "
+    errorMessage.textContent = " "
+    recentlyViewedItems.innerHTML = " "
+    recentlyViewedItems = [];
 })
