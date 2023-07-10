@@ -81,3 +81,12 @@ recentlyViewed.addEventListener("click", function(event) {
         }
     }
 })
+
+
+function addToRecentlyViewed(item) {
+    recentlyViewedItems = recentlyViewedItems.filter(recItem => recItem !== item)
+    recentlyViewedItems.unshift(item)
+    if (recentlyViewedItems.length > maxRecentlyViewed) {
+        recentlyViewedItems.pop()
+    }
+}
