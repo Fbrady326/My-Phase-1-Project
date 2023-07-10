@@ -50,7 +50,14 @@ search.addEventListener("submit", function(event) {
     results.appendChild(itemDescription)
     results.appendChild(itemLocation)
     results.appendChild(itemHealthPoints)
+    addToRecentlyViewed(updatedName)
+    updateRecentlyViewed()
     })
 // catch goes here
-
+   .catch(function(error) {
+    console.error("Error", error)
+    results.innerHTML = " "
+    errorMessage.textContent = error.message 
+    loading.style.display = "none"
+   })
 })
