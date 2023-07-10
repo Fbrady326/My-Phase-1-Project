@@ -17,4 +17,17 @@ search.addEventListener("submit", function(event) {
   loading.style.display = "block";
   results.innerHTML = " ";
   errorMessage.textContent = " ";
+
+  fetch("https://eldenring.fanapis.com/api/bosses")
+  .then(function(response) {
+    if (!response.ok) {
+        throw new Error("Error Occured. The boss you entered was not found on https://eldenring.fanapis.com/api/bosses")
+    }
+    return response.json()
+  })
+    .then(function(data) {
+        if(data.error) {
+         throw new Error(data.error)
+        }
+    })
 })
