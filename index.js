@@ -70,3 +70,14 @@ clearButton.addEventListener("click", function() {
     recentlyViewedItems.innerHTML = " "
     recentlyViewedItems = [];
 })
+
+
+recentlyViewed.addEventListener("click", function(event) {
+    if(event.target.classList.contains("recentlyViewedItem")) {
+        const clickedItem = event.target.dataset.item
+        if(clickedItem) {
+            const inputOfName = document.getElementById("name")
+            inputOfName.value = clickedItem
+        }
+    }
+})
