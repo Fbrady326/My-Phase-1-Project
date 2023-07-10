@@ -63,6 +63,17 @@ search.addEventListener("submit",function(event) {
       });
 
 
+      recentlyViewed.addEventListener('click', function(event) {
+        if (event.target.classList.contains('recentlyViewedItem')) {
+          const clickedItem = event.target.dataset.thing;
+          if (clickedItem) {
+            const nameInput = document.getElementById('name');
+            nameInput.value = clickedItem;
+          }
+        }
+      });
+
+
 
 
 
