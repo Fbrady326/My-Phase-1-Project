@@ -6,16 +6,16 @@
   
 
 body {
-    background: rgb(0, 0, 0, .94);
+    background: rgba(0, 0, 0, .94);
 }
 
 #results {
-   color: rgb(0, 0, 0, .99);
+   background-color: rgba(0, 0, 0, 0.99);
    width: 1000px;
    height: 500px;
    padding: 15px;
    border-style: ridge;
-   border-color: rgb(255, 255, 255);
+   border-color: #bcad69e7;
    margin: 250px;
    box-sizing: border-box;
    margin-top: 100px;
@@ -28,7 +28,7 @@ body {
    height: 200px;
    padding: 15px;
    border-style: ridge;
-   border-color: rgb(255, 255, 255);
+   border-color: #bcad69e7;
    margin: 100px;
    box-sizing: border-box;
 }
@@ -39,7 +39,7 @@ body {
    height: 200px;
    padding: 15px;
    border-style: ridge;
-   border-color: rgb(255, 255, 255);
+   border-color: #bcad69e7;
    margin: 100px;
    box-sizing: border-box;
 }
@@ -50,7 +50,7 @@ body {
    height: 200px;
    padding: 15px;
    border-style: ridge;
-   border-color: rgb(255, 255, 255);
+   border-color: #bcad69e7;
    margin: 100px;
    box-sizing: border-box;
 }
@@ -70,3 +70,39 @@ label[for=name] {
 h3 {
     color: #bcad69e7;
 }
+
+form {
+    margin-bottom: 25px;
+    background-color:rgba(0, 0, 0, 0.99);
+    padding: 21px;
+    border-radius: 4px;
+    border: 5px solid #bcad69e7;
+  }
+
+  input[type="text"] {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid black;
+    border-radius: 4px;
+  }
+
+  button[type="submit"] {
+    background-color: #ffffff;
+    color:rgb(0, 0, 0);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 15px;
+  }
+
+  button[type="button"] {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 15px;
+    width: 75px;
+  }
