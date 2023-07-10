@@ -18,7 +18,7 @@ search.addEventListener("submit", function(event) {
   results.innerHTML = " ";
   errorMessage.textContent = " ";
 
-  fetch("https://eldenring.fanapis.com/api/bosses")
+  fetch(`https://eldenring.fanapis.com/api/bosses${updatedName}`)
   .then(function(response) {
     if (!response.ok) {
         throw new Error("Error Occured. The boss you entered was not found on https://eldenring.fanapis.com/api/bosses")
@@ -29,5 +29,28 @@ search.addEventListener("submit", function(event) {
         if(data.error) {
          throw new Error(data.error)
         }
+//to display elements to html
+    const item = data.data
+    loading.style.display = "none"
+    const itemName = document.createElement("h2")
+    itemName.textContent = item.name
+    const itemImage = document.createElement("img")
+    itemImage.src = item.image
+    const itemRegion = document.createElement("h3")
+    itemRegion.textContent = item.region 
+    const itemDescription = document.createElement("h3")
+    itemDescription.textContent = item.description 
+    const itemLocation = document.createElement("h3")
+    itemLocation.textContent = item.location 
+    const itemHealthPoints = document.createElement("h3")
+    itemHealthPoints.textContent = item.healthPoints
+    results.appendChild(itemName)
+    results.appendChild(itemImage)
+    results.appendChild(itemRegion)
+    results.appendChild(itemDescription)
+    results.appendChild(itemLocation)
+    results.appendChild(itemHealthPoints)
     })
+// catch goes here
+
 })
