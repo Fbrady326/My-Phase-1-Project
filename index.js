@@ -54,7 +54,13 @@ search.addEventListener("submit",function(event) {
     })
     
 
-
+    clearButton.addEventListener('click', function() {
+        search.reset();
+        results.innerHTML = '';
+        errorMessage.textContent = '';
+        recentlyViewed.innerHTML = '';
+        recentlyViewedItems = [];
+      });
 
 
 
