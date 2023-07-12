@@ -1,30 +1,13 @@
-const bossUrl = "http://localhost:3000/data"
+const bossDataTemplate = document.querySelector("[bossDataTemplate]")
 
-let bossArray = []
-
-const getCharacters = (url) => {
-    fetch(url)
-    .then(response => response.json()) 
-    .then(characters => {
-        characters.forEach(character => bossArray.push(character))
-        characterList(bossArray)
+fetch("https://eldenring.fanapis.com/api/bosses")
+.then(function(response) {
+    return response.json()
+})
+.then(function(data) {
+    //let items = data.data
+    data.data.forEach(item => {
+    const card = bossDataTemplate.content.cloneNode(true).children[0]
+    console.log(item)
     })
-}
-
-let bossAttributes = {name: [], region: [], description: [], location: []}
-
-const createObjectOfCharacterValues = () => {
-    for(let index in bossArray) {
-        let characterInfo = bossArray[index]
-        for (let charKey in characterInfo) {
-            if(charKey !== "id" && charKey !== "name" && charKey !== "image") {
-                let attValue = bossAttributes[charKey]
-                let objAtKey = characterInfo[charKey]
-                let infoOption = attValue.find(element => element === objAtKey)
-                if (infoOption === undefined) {
-                    attValue.push(objAtKey)
-                }
-            }
-        }
-    }
-}
+})
