@@ -48,8 +48,8 @@ lightmodeToggle.addEventListener('change', () => {
     document.body.classList.toggle("light");
 })
 
-var btn1 = document.querySelector('#green');
-var btn2 = document.querySelector('#red');
+const btn1 = document.querySelector('#green');
+const btn2 = document.querySelector('#red');
 
 btn1.addEventListener('click', function() {
   
