@@ -131,3 +131,13 @@ h3 {
    font-family: mantinia;
    font-size: large;
  }
+
+
+ #commentBox, #addComment {
+     border: none;
+     border-radius: 5px;
+ }
+
+ #addComment:hover {
+  background-color: #ff0000;
+ }

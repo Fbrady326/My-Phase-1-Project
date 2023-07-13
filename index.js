@@ -4,6 +4,7 @@ const bossDataTemplate= document.querySelector("[bossDataTemplate]")
 const bossDataCards= document.querySelector("[bossDataCards]")
 const searchInput = document.querySelector("[dataSearch]")
 let lightmodeToggle = document.querySelector("#lightMode")
+const addComment = document.querySelector("#addComment")
 
 
 let bossArray = []
@@ -44,4 +45,14 @@ fetch("https://eldenring.fanapis.com/api/bosses?limit=50")
 
 lightmodeToggle.addEventListener('change', () => {
     document.body.classList.toggle("light");
+})
+
+
+
+addComment.addEventListener("click", function() {
+    const commentValue = document.querySelector("#commentBox").value
+    const list = document.createElement("li")
+    const comment = document.createTextNode(commentValue)
+    list.appendChild(comment)
+    document.querySelector("#unorderedList").appendChild(list)
 })
