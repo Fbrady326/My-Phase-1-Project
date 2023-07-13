@@ -10,9 +10,14 @@
 </head>
 <body>
       <h1>Elden Ring Search</h1>
+       <div id="lightModeButton">
+        <input type="checkbox" id="lightMode" >
+        <label for="lightMode" id="lightmodeLabel">Light Mode</label>
+       </div>   
+
      <div class="searchWrapper">
-         <label for="search">Search Boss Name</label>
-         <input type="search" id="search" dataSearch>
+         <label for="search" id="labelTwo">Search Boss Info:</label>
+         <input type="text" id="search" placeholder="Enter Name" dataSearch>
        </div>
           <div class="bossInfo" id="cardLogo" bossDataCards></div>
         <template bossDataTemplate>

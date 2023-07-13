@@ -1,21 +1,23 @@
+
+
 const bossDataTemplate= document.querySelector("[bossDataTemplate]")
 const bossDataCards= document.querySelector("[bossDataCards]")
 const searchInput = document.querySelector("[dataSearch]")
+let lightmodeToggle = document.querySelector("#lightMode")
 
 
 let bossArray = []
 
 searchInput.addEventListener("input", (e) => {
-     const value = e.target.value
-     console.log(bossArray)
+     const value = e.target.value.toLowerCase()
      bossArray.forEach(item => {
-        const isVisible = item.name.include(value) || item.description.include(value) || item.region.include(value) || item.location.include(value) || item.image.include(value)
+        const isVisible = item.name.toLowerCase().includes(value) || item.description.toLowerCase().includes(value) || item.region.toLowerCase().includes(value) || item.location.toLowerCase().includes(value)
         item.element.classList.toggle("hide", !isVisible)
      })
      
 })
 
-fetch("https://eldenring.fanapis.com/api/bosses")
+fetch("https://eldenring.fanapis.com/api/bosses?limit=50")
 .then(function(response) {
     return response.json()
 })
@@ -34,7 +36,12 @@ fetch("https://eldenring.fanapis.com/api/bosses")
     location.textContent = item.location
     image.src = item.image
     bossDataCards.append(card)
-    console.log(item)
     return { name: item.name, description: item.description, region: item.region, location: item.location, image: item.image, element: card}
     })
+})
+
+
+
+lightmodeToggle.addEventListener('change', () => {
+    document.body.classList.toggle("light");
 })

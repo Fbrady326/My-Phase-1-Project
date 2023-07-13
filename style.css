@@ -4,28 +4,49 @@
   }
 
   
-  .searchWrapper {
-   display: flex;
-   flex-direction: column;
-   gap: .25rem;
+  body {
+    background-color: rgba(0, 0, 0, 0.94);
   }
 
-input {
+
+  .searchWrapper {
+   display: inline;
+   flex-direction: row;
+   gap: .25rem;
+   margin-left: 480px;
+   position: relative;
+   bottom: 50px;
+  }
+
+   #labelTwo {
+    font-size: large;
+    color: #c8b982;
+    position: relative;
+    
+   }
+
+
+#search {
   font-size: 1rem;
+  width: 425px;
+ margin-bottom: 50px;
+ border: 3px solid #c8b982;
+ border-radius: 5px;
 }
 
 .bossInfo {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: .25rem;
+  gap: 1rem;
   margin-top: 1rem;
 }
 
 .card {
-  border: 1px solid black;
-  background-color: white;
-  padding: .5rem;
-  width: 200px;
+  border: 6px solid #c8b982;
+  background-color: rgb(0, 0, 0);
+  padding: 10px;
+  width: 350px;
+ margin-left: 50px;
 }
 
 .card .header {
@@ -41,7 +62,6 @@ input {
  display: none;
 }
 
-
   #cardLogo  {
   width: 20px;
   height: 20px;
@@ -52,3 +72,62 @@ input {
   height: auto;
 }
 
+h1 {
+  text-align: center;
+  font-size: 80px;
+  font-family: mantinia;
+  color: #c8b982;
+}
+
+h2 {
+  font-family: mantinia;
+  color: #c8b982;
+}
+
+h3 {
+  font-family: mantinia;
+  font-weight: lighter;
+  color: whitesmoke;
+}
+
+.image img {
+  color: whitesmoke;
+}
+
+ #lightMode {
+  appearance: none;
+  width: 120px;
+  height: 30px;
+  position: relative;
+  left: 1250px;
+  bottom:100px;
+  background: #c8b982;
+  border-radius: 5px;
+  border: 2px solid #555;
+ }
+
+ #lightMode:checked {
+  background: #000000;
+ }
+
+ .light {
+  color: #c8b982;
+  background: rgb(255, 255, 255);
+  filter: brightness(90%);
+ }
+
+ #lightmodeLabel {
+    color: white;
+    font-family: mantinia;
+    font-weight: bolder;
+    position: relative;
+    left: 1140px;
+    bottom: 112px;
+ }
+
+ ::placeholder {
+   color: #000000;
+   font-weight: bolder;
+   font-family: mantinia;
+   font-size: large;
+ }
