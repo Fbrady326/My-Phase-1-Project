@@ -4,7 +4,8 @@ const bossDataTemplate= document.querySelector("[bossDataTemplate]")
 const bossDataCards= document.querySelector("[bossDataCards]")
 const searchInput = document.querySelector("[dataSearch]")
 let lightmodeToggle = document.querySelector("#lightMode")
-const addComment = document.querySelector("#addComment")
+const allComments = document.querySelector("#allComments")
+
 
 
 let bossArray = []
@@ -47,12 +48,27 @@ lightmodeToggle.addEventListener('change', () => {
     document.body.classList.toggle("light");
 })
 
+var btn1 = document.querySelector('#green');
+var btn2 = document.querySelector('#red');
+
+btn1.addEventListener('click', function() {
+  
+    if (btn2.classList.contains('red')) {
+      btn2.classList.remove('red');
+    } 
+  this.classList.toggle('green');
+  
+});
+
+btn2.addEventListener('click', function() {
+  
+    if (btn1.classList.contains('green')) {
+      btn1.classList.remove('green');
+    } 
+  this.classList.toggle('red');
+  
+});
 
 
-addComment.addEventListener("click", function() {
-    const commentValue = document.querySelector("#commentBox").value
-    const list = document.createElement("li")
-    const comment = document.createTextNode(commentValue)
-    list.appendChild(comment)
-    document.querySelector("#unorderedList").appendChild(list)
-})
+
+

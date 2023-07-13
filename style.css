@@ -6,6 +6,7 @@
   
   body {
     background-color: rgba(0, 0, 0, 0.94);
+    overflow-x: hidden;
   }
 
 
@@ -15,7 +16,7 @@
    gap: .25rem;
    margin-left: 480px;
    position: relative;
-   bottom: 50px;
+   bottom: 100px;
   }
 
    #labelTwo {
@@ -77,6 +78,7 @@ h1 {
   font-size: 80px;
   font-family: mantinia;
   color: #c8b982;
+  position:static;
 }
 
 h2 {
@@ -132,12 +134,30 @@ h3 {
    font-size: large;
  }
 
+ button{
+  cursor: pointer;
+  outline: 0;
+  color: #AAA;
+  position: relative;
+  left: 1280px;
+  top: 200px;
 
- #commentBox, #addComment {
-     border: none;
-     border-radius: 5px;
- }
+}
 
- #addComment:hover {
-  background-color: #ff0000;
- }
+.btn:focus {
+  outline: none;
+}
+
+.green{
+  color: #c8b982;
+}
+
+.red{
+  color: rgb(0, 0, 0);
+}
+
+#question {
+  position: relative;
+  left: 1210px;
+  top: 200px;
+}
